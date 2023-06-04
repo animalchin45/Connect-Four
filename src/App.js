@@ -25,14 +25,14 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Connect Four!</h1>
+    <div className='layout'>
+      {/* <h1>Connect Four!</h1>
       <h2>Family Fun!</h2>
       <p>Player 1: {playerOne.score}</p>
       <button onClick={handlePlayerOneScore}>Score!</button>
       <p>Player 2: {playerTwo.score}</p>
       <button onClick={handlePlayerTwoScore}>Score!</button>
-      <button onClick={handleScoreReset}>Reset!</button>
+      <button onClick={handleScoreReset}>Reset!</button> */}
     </div>
   )
 }

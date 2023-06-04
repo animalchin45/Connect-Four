@@ -1,9 +1,11 @@
 // colors
-$red: #fc4747;
-$dark-blue: #10141e;
-$greyish-blue: #5a698f;
-$semi-dark-blue: #161d2f;
-$pure-white: #ffffff;
+$color-black: #000000;
+$color-black-lite: rgba(#000000, 0.6);
+$color-dark-purple: #5c2dd5;
+$color-light-purple: #7945ff;
+$color-salmon: #fd6687;
+$color-yellow: #ffce67;
+$color-white: #ffffff;
 
 // Spacing
 $space-xxsmall: 0.8rem;
@@ -14,7 +16,6 @@ $space-large: 3.2rem;
 $space-xl: 7rem;
 
 // // Media Breaks
-// $screen-large: 1200px;
 $tablet-break: 1100px;
 $mobile-break: 800px;
 

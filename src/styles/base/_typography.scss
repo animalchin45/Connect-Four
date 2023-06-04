@@ -1,66 +1,64 @@
 // font sizes
-$font-body-small: 1.3rem;
-$font-body-medium: 1.5rem;
-$font-heading-small: 1.8rem;
+$font-heading-large: 5.6rem;
 $font-heading-medium: 2.4rem;
-$font-heading-large: 3.2rem;
+$font-heading-small: 2rem;
+$font-heading-xsmall: 1.6rem;
+$font-body: 1.6rem;
 
-// @font-face {
-//     font-family: 'Raleway';
-//     src: url('../fonts/Raleway-Regular.eot');
-//     src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Raleway-Regular.woff2') format('woff2'),
-//         url('../fonts/Raleway-Regular.woff') format('woff'),
-//         url('../fonts/Raleway-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+    url('../assets/fonts/SpaceGrotesk-Bold.woff') format('woff'),
+    url('../assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//     font-family: 'Righteous';
-//     src: url('../fonts/Righteous-Regular.eot');
-//     src: url('../fonts/Righteous-Regular.eot?#iefix') format('embedded-opentype'),
-//         url('../fonts/Righteous-Regular.woff2') format('woff2'),
-//         url('../fonts/Righteous-Regular.woff') format('woff'),
-//         url('../fonts/Righteous-Regular.ttf') format('truetype');
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+    url('../assets/fonts/SpaceGrotesk-Medium.woff') format('woff'),
+    url('../assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
 // font settings
 
 body {
-  color: $dark-blue;
-  font-family: 'Outfit', sans-serif;
-  font-size: $font-body-medium;
-  font-weight: 300;
+  color: $color-black;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: $font-body;
+  font-weight: 500;
+  line-height: 2.1rem;
+}
+
+.font-lite {
+  color: $color-black-lite;
 }
 
 h1 {
   font-size: $font-heading-large;
-  font-weight: 300;
+  font-weight: bold;
+  line-height: 7.1rem;
 }
 
 h2 {
   font-size: $font-heading-medium;
-}
-
-.heading-medium {
-  font-size: $font-heading-medium;
+  font-weight: bold;
+  line-height: 3.1rem;
 }
 
 h3 {
-  font-size: $font-heading-medium;
-  font-weight: 500;
+  font-size: $font-heading-small;
+  font-weight: bold;
+  line-height: 2.6rem;
 }
 
 h4 {
-  font-size: $font-heading-small;
-  font-weight: 500;
-}
-
-.font-small {
-  font-size: $font-body-small;
+  font-size: $font-heading-xsmall;
+  font-weight: bold;
+  line-height: 2.1rem;
 }
