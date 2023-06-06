@@ -1,9 +1,11 @@
 import React from 'react'
 
+// Pass desired text as prop
+
 function HeaderBtn({ text }) {
   return (
     <button className='btn btn--small-pill'>
-      <h4>{text}</h4>
+      <p className='heading-xs'>{text}</p>
     </button>
   )
 }

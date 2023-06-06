@@ -8,7 +8,7 @@ function Options({ text, type }) {
     <button
       className={`btn btn--big-pill btn--big-pill--white btn--big-pill--options-${type}`}
     >
-      <h2>{text}</h2>
+      <p className='heading-md'>{text}</p>
     </button>
   )
 }

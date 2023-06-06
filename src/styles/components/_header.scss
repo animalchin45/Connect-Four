@@ -1,0 +1,12 @@
+.header {
+  align-items: center;
+  display: flex;
+  grid-column: 2 / 3;
+  justify-content: space-between;
+}
+
+@media (max-width: $tablet-break) {
+  .header {
+    grid-column: 1 / 2;
+  }
+}

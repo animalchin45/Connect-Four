@@ -39,27 +39,54 @@ body {
   color: $color-black-lite;
 }
 
-h1 {
+// h1 {
+//   font-size: $font-heading-large;
+//   font-weight: bold;
+//   line-height: 7.1rem;
+// }
+
+.heading-lg {
   font-size: $font-heading-large;
   font-weight: bold;
   line-height: 7.1rem;
 }
 
-h2 {
+// h2 {
+//   font-size: $font-heading-medium;
+//   font-weight: bold;
+//   line-height: 3.1rem;
+//   text-transform: uppercase;
+// }
+
+.heading-md {
   font-size: $font-heading-medium;
   font-weight: bold;
   line-height: 3.1rem;
   text-transform: uppercase;
 }
 
-h3 {
+// h3 {
+//   font-size: $font-heading-small;
+//   font-weight: bold;
+//   line-height: 2.6rem;
+//   text-transform: uppercase;
+// }
+
+.heading-sm {
   font-size: $font-heading-small;
   font-weight: bold;
   line-height: 2.6rem;
   text-transform: uppercase;
 }
 
-h4 {
+// h4 {
+//   font-size: $font-heading-xsmall;
+//   font-weight: bold;
+//   line-height: 2.1rem;
+//   text-transform: uppercase;
+// }
+
+.heading-xs {
   font-size: $font-heading-xsmall;
   font-weight: bold;
   line-height: 2.1rem;
