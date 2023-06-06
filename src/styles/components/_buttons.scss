@@ -8,6 +8,7 @@
     box-shadow: 0px 10px 0px $color-black;
     height: 7.2rem;
     padding: 1.3rem 2rem;
+    transition: $fade ease-in-out;
     width: 40rem;
 
     &--salmon {
@@ -29,10 +30,16 @@
       justify-content: space-between;
     }
 
-    &--options {
+    &--options-menu {
       align-items: center;
       display: flex;
       justify-content: center;
+    }
+
+    &--options-start {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
     }
 
     &:hover {
@@ -50,6 +57,7 @@
     justify-content: center;
     height: 3.9rem;
     padding: 1rem 2rem;
+    transition: $fade ease-in-out;
     width: max-content;
 
     &:hover {
