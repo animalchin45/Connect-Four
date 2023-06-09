@@ -39,6 +39,7 @@ function App() {
       <div className='player--right'>
         <Player player={2} />
       </div>
+      <Footer />
     </div>
   )
 }

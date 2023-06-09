@@ -83,6 +83,8 @@
     width: 29.6rem;
 
     &--left {
+      align-items: flex-start;
+      grid-column: 2 / 3;
       justify-content: flex-start;
     }
 
@@ -99,7 +101,8 @@
     }
 
     &--right {
-      grid-column: 1 / 2;
+      align-items: flex-start;
+      grid-column: 2 / 3;
       grid-row: 2 / 3;
       justify-content: flex-end;
     }

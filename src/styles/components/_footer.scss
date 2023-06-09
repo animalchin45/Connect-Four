@@ -1,0 +1,33 @@
+.footer {
+  align-items: flex-end;
+  display: flex;
+  grid-column: 1 / -1;
+  grid-row: 2 / 4;
+  z-index: 1;
+
+  &__fill {
+    background-color: $color-dark-purple;
+    border: none;
+    border-radius: 5rem 5rem 0 0;
+    height: 20rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: $tablet-break) {
+  .footer {
+    grid-row: 3 / 5;
+
+    &__fill {
+      height: 15rem;
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .footer {
+    &__fill {
+      height: 35rem;
+    }
+  }
+}
