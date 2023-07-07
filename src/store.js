@@ -3,10 +3,12 @@ import { combineReducers } from 'redux'
 
 // Import Reducers
 import playerReducer from './features/playerSlice'
+import gameReducer from './features/gameSlice'
 
 // Combine Reducers
 const reducers = combineReducers({
   players: playerReducer,
+  game: gameReducer,
 })
 
 // Configure Store

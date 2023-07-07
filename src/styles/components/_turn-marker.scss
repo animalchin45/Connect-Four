@@ -1,0 +1,60 @@
+.turn-marker {
+  align-items: center;
+  display: grid;
+  height: max-content;
+  position: absolute;
+  top: -3rem;
+  width: max-content;
+  z-index: 4;
+
+  &__info {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    // may not need these classes
+    &__player {
+    }
+
+    &__timer {
+    }
+  }
+
+  &--player1 {
+    color: $color-white;
+  }
+
+  &--player2 {
+    color: $color-black;
+  }
+
+  &--winner {
+    align-items: center;
+    background-color: $color-white;
+    border: 3px solid $color-black;
+    border-radius: 2rem;
+    box-shadow: 0px 10px 0px $color-black;
+    display: flex;
+    flex-direction: column;
+    height: 16rem;
+    justify-content: center;
+    position: absolute;
+    top: -2rem;
+    width: 28.5rem;
+    z-index: 4;
+  }
+
+  & svg {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  & p {
+    text-align: center;
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .turn-marker {
+    top: -1.5rem;
+  }
+}

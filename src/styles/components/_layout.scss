@@ -2,14 +2,14 @@
   background-color: $color-light-purple;
   display: grid;
   grid-template-columns: 1fr 63.2rem 1fr;
-  grid-template-rows: minmax(16rem, 1fr) 58.4rem minmax(16rem, 1fr);
+  grid-template-rows: 16rem 58.4rem minmax(16rem, 1fr);
   height: 100dvh;
 }
 
 @media (max-width: $tablet-break) and (min-width: $mobile-break) {
   .layout {
     grid-template-columns: 6.8rem 1fr 6.8rem;
-    grid-template-rows: 11.4rem 13.2rem 58.4rem 1fr;
+    grid-template-rows: 11.4rem 13.2rem 58.4rem minmax(23.4rem, 1fr);
   }
 }
 

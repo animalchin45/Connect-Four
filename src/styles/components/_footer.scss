@@ -2,32 +2,22 @@
   align-items: flex-end;
   display: flex;
   grid-column: 1 / -1;
-  grid-row: 2 / 4;
-  z-index: 1;
+  grid-row: 3 / 4;
+  justify-content: center;
+  position: relative;
 
   &__fill {
-    background-color: $color-dark-purple;
     border: none;
-    border-radius: 5rem 5rem 0 0;
-    height: 20rem;
+    border-radius: 4rem 4rem 0 0;
+    display: flex;
+    height: calc(100% + 3rem);
+    justify-content: center;
     width: 100%;
   }
 }
 
 @media (max-width: $tablet-break) {
   .footer {
-    grid-row: 3 / 5;
-
-    &__fill {
-      height: 15rem;
-    }
-  }
-}
-
-@media (max-width: $mobile-break) {
-  .footer {
-    &__fill {
-      height: 35rem;
-    }
+    grid-row: 4 / 5;
   }
 }
