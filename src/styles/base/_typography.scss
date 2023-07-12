@@ -39,6 +39,14 @@ body {
   color: $color-black-lite;
 }
 
+.font-purple {
+  color: $color-light-purple;
+}
+
+.font-white {
+  color: $color-white;
+}
+
 // h1 {
 //   font-size: $font-heading-large;
 //   font-weight: bold;
@@ -92,4 +100,8 @@ body {
   font-weight: bold;
   line-height: 2.1rem;
   text-transform: uppercase;
+
+  &--lowercase {
+    text-transform: none;
+  }
 }
