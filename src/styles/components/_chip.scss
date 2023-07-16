@@ -1,0 +1,12 @@
+.chip {
+  border-radius: 6.4rem;
+  border: 3px solid $color-black;
+  box-sizing: content-box;
+  background: $color-yellow;
+  box-shadow: 0px 5px 0px 0px #000, 0px 5px 0px 1px rgba(0, 0, 0, 0.5) inset;
+  grid-column: 6 / 7;
+  grid-row: 4 / 5;
+  height: 6.4rem;
+  width: 6.4rem;
+  z-index: 3;
+}

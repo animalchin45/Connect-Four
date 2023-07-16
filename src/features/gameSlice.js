@@ -2,10 +2,18 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   turn: 1,
-  newGame: true,
+  newGame: false,
   viewRules: false,
   pause: false,
   winner: 0,
+  board: [
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+  ],
 }
 
 export const gameSlice = createSlice({

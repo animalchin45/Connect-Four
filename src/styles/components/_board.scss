@@ -6,16 +6,43 @@
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   justify-content: center;
+  position: relative;
+
+  &__selector-container {
+    display: grid;
+    grid-gap: 2.25rem;
+    grid-template-columns: repeat(7, 6.55rem);
+    grid-template-rows: repeat(6, 6.55rem);
+    height: 54.25rem;
+    padding: 1.85rem;
+    position: absolute;
+    top: 0;
+    width: 63.2rem;
+    z-index: 5;
+  }
 
   &__white {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: 4;
+  }
+
+  &__holes {
+    display: grid;
+    grid-gap: 2.25rem;
+    grid-template-columns: repeat(7, 6.55rem);
+    grid-template-rows: repeat(6, 6.55rem);
+    height: 54.25rem;
+    padding: 1.85rem;
+    position: absolute;
+    top: 0;
+    width: 63.2rem;
     z-index: 3;
   }
 
   &__black {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
     transform: translateY(0.25rem);
     z-index: 2;
   }
