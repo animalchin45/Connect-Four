@@ -16,7 +16,6 @@
     height: 54.25rem;
     padding: 1.85rem;
     position: absolute;
-    top: 0;
     width: 63.2rem;
     z-index: 5;
   }
@@ -35,7 +34,6 @@
     height: 54.25rem;
     padding: 1.85rem;
     position: absolute;
-    top: 0;
     width: 63.2rem;
     z-index: 3;
   }
@@ -54,5 +52,15 @@
     grid-row: 3 / 4;
     grid-template-columns: auto;
     grid-template-rows: auto;
+
+    &__selector-container {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__holes {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
   }
 }

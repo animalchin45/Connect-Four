@@ -10,6 +10,7 @@
   .layout {
     grid-template-columns: 6.8rem 1fr 6.8rem;
     grid-template-rows: 11.4rem 13.2rem 58.4rem minmax(23.4rem, 1fr);
+    overflow: auto;
   }
 }
 
