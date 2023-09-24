@@ -3,5 +3,6 @@
 // else place chip in next available position
 
 // Board implementation
-// once valid move is made run win checker
+// once valid move is made place new chip
+// run all win checkers
 // move to next turn if no win is detected

@@ -102,6 +102,22 @@
   }
 }
 
+@media (max-width: $tablet-break) {
+  .btn {
+    &--selector {
+      & svg {
+        opacity: 0;
+      }
+
+      &:hover {
+        svg {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: $mobile-break) {
   .btn {
     &--big-pill {
@@ -109,6 +125,11 @@
     }
     &--small-pill {
       min-width: 10.8rem;
+    }
+    &--selector {
+      height: 29rem;
+      transform: translate(0rem, 0rem);
+      width: 4rem;
     }
   }
 }

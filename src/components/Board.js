@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useMediaQuery } from 'react-responsive'
+import { v4 as uuid4 } from 'uuid'
 
 import Chip from './Chip'
 import MoveSelector from './Buttons/MoveSelector'
+
+import { chipPosistions } from '../hooks/chipPositions'
 
 import BoardWhiteLarge from '../assets/images/board-layer-white-large.svg'
 import BoardWhiteSmall from '../assets/images/board-layer-white-small.svg'
@@ -11,6 +15,16 @@ import BoardBlackSmall from '../assets/images/board-layer-black-small.svg'
 
 function Board() {
   const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
+  const { board } = useSelector((state) => state.game)
+  const [chips, setChips] = useState([])
+
+  const renderedChips = chips.map((item) => {
+    return <Chip position={item.position} player={item.player} key={uuid4()} />
+  })
+
+  useEffect(() => {
+    setChips(chipPosistions(board))
+  }, [board])
 
   return (
     <div className='board'>
@@ -26,9 +40,7 @@ function Board() {
       <div className='board__white'>
         {!isMobile ? <BoardWhiteLarge /> : <BoardWhiteSmall />}
       </div>
-      <div className='board__holes'>
-        <Chip />
-      </div>
+      <div className='board__holes'>{renderedChips}</div>
       <div className='board__black'>
         {!isMobile ? <BoardBlackLarge /> : <BoardBlackSmall />}
       </div>

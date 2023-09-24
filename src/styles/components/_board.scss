@@ -12,7 +12,7 @@
     display: grid;
     grid-gap: 2.25rem;
     grid-template-columns: repeat(7, 6.55rem);
-    grid-template-rows: repeat(6, 6.55rem);
+    // grid-template-rows: repeat(6, 6.55rem);
     height: 54.25rem;
     padding: 1.85rem;
     position: absolute;
@@ -61,6 +61,30 @@
     &__holes {
       grid-column: 1 / -1;
       grid-row: 1 / -1;
+    }
+  }
+}
+
+@media (max-width: $mobile-break) {
+  .board {
+    &__selector-container {
+      grid-gap: 0.6125rem;
+      grid-template-columns: repeat(7, 4rem);
+      // grid-template-rows: repeat(6, 4rem);
+      height: 28.8rem;
+      padding: 0.9125rem;
+      position: absolute;
+      width: 33.5rem;
+    }
+
+    &__holes {
+      grid-gap: 0.6125rem;
+      grid-template-columns: repeat(7, 4rem);
+      grid-template-rows: repeat(6, 4rem);
+      height: 28.8rem;
+      padding: 0.9125rem;
+      position: absolute;
+      width: 33.5rem;
     }
   }
 }

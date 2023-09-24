@@ -38,7 +38,7 @@ function App() {
   // }
 
   useEffect(() => {
-    console.log(verticalWin(board))
+    // console.log(verticalWin(board))
     // console.log(board[0][1])
   }, [])
 
