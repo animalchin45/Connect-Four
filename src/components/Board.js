@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useMediaQuery } from 'react-responsive'
 import { v4 as uuid4 } from 'uuid'
 
@@ -7,6 +7,8 @@ import Chip from './Chip'
 import MoveSelector from './Buttons/MoveSelector'
 
 import { chipPosistions } from '../hooks/chipPositions'
+import { verticalWin } from '../hooks/winChecker'
+import { declareWinner } from '../features/gameSlice'
 
 import BoardWhiteLarge from '../assets/images/board-layer-white-large.svg'
 import BoardWhiteSmall from '../assets/images/board-layer-white-small.svg'
@@ -15,7 +17,8 @@ import BoardBlackSmall from '../assets/images/board-layer-black-small.svg'
 
 function Board() {
   const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
-  const { board } = useSelector((state) => state.game)
+  const dispatch = useDispatch()
+  const { turn, board } = useSelector((state) => state.game)
   const [chips, setChips] = useState([])
 
   const renderedChips = chips.map((item) => {
@@ -24,18 +27,21 @@ function Board() {
 
   useEffect(() => {
     setChips(chipPosistions(board))
+    if (verticalWin(board)) {
+      dispatch(declareWinner(verticalWin(board)))
+    }
   }, [board])
 
   return (
     <div className='board'>
       <div className='board__selector-container'>
-        <MoveSelector column={0} />
-        <MoveSelector column={1} />
-        <MoveSelector column={2} />
-        <MoveSelector column={3} />
-        <MoveSelector column={4} />
-        <MoveSelector column={5} />
-        <MoveSelector column={6} />
+        <MoveSelector column={0} player={turn} />
+        <MoveSelector column={1} player={turn} />
+        <MoveSelector column={2} player={turn} />
+        <MoveSelector column={3} player={turn} />
+        <MoveSelector column={4} player={turn} />
+        <MoveSelector column={5} player={turn} />
+        <MoveSelector column={6} player={turn} />
       </div>
       <div className='board__white'>
         {!isMobile ? <BoardWhiteLarge /> : <BoardWhiteSmall />}

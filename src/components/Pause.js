@@ -23,7 +23,12 @@ function Pause() {
         <p className='heading-lg'>Pause</p>
         <BigPill text={'Continue Game'} type={'menu'} action={handlePause} />
         <BigPill text={'Restart'} type={'menu'} action={handleReset} />
-        <BigPill text={'Quit Game'} type={'menu'} color={'salmon'} />
+        <BigPill
+          text={'Quit Game'}
+          type={'menu'}
+          color={'salmon'}
+          action={handleReset}
+        />
       </div>
     </div>
   )

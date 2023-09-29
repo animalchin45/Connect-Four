@@ -2,15 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   turn: 1,
-  newGame: false,
+  newGame: true,
   viewRules: false,
   pause: false,
   winner: 0,
   board: [
-    [null, null, null, 1, 2, 1],
-    [null, null, null, null, null, 2],
-    [null, null, null, null, 2, 1],
-    [null, null, null, null, null, 1],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -38,12 +38,27 @@ export const gameSlice = createSlice({
     pauseGame: (state) => {
       state.pause = !state.pause
     },
+    newMove: (state, action) => {
+      const replaceAt = action.payload.updatedColumn
+      state.board = [
+        ...state.board.slice(0, replaceAt),
+        action.payload.newBoardColumn,
+        ...state.board.slice(replaceAt + 1),
+      ]
+    },
     declareWinner: (state, action) => {
       state.winner = action.payload
     },
   },
 })
 
-export const { reset, nextTurn, startGame, rules, pauseGame, declareWinner } =
-  gameSlice.actions
+export const {
+  reset,
+  nextTurn,
+  startGame,
+  rules,
+  pauseGame,
+  newMove,
+  declareWinner,
+} = gameSlice.actions
 export default gameSlice.reducer

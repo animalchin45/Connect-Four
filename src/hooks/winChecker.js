@@ -50,11 +50,11 @@ export const verticalWin = (board) => {
       // after each switch statment runs, check player counters for value of 4
       // return value of 0 for no wins, 1 or 2 for win condition of appropriate player
       if (player1 >= 4) {
-        // return 1
-        console.log('Player 1 wins!')
+        // console.log('Player 1 wins!')
+        return 1
       } else if (player2 >= 4) {
-        // return 2
-        console.log('Player 2 wins!')
+        // console.log('Player 2 wins!')
+        return 2
       }
     }
   }
