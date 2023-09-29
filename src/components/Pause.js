@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux'
 
 import BigPill from './Buttons/BigPill'
 
-import { reset, pauseGame } from '../features/gameSlice'
+import { reset, nextRound, pauseGame } from '../features/gameSlice'
+import { resetScore } from '../features/playerSlice'
 
 function Pause() {
   const dispatch = useDispatch()
@@ -12,9 +13,15 @@ function Pause() {
     dispatch(pauseGame())
   }
 
+  const handleRestart = () => {
+    dispatch(pauseGame())
+    dispatch(nextRound())
+  }
+
   const handleReset = () => {
     dispatch(pauseGame())
     dispatch(reset())
+    dispatch(resetScore())
   }
 
   return (
@@ -22,7 +29,7 @@ function Pause() {
       <div className='pause__container'>
         <p className='heading-lg'>Pause</p>
         <BigPill text={'Continue Game'} type={'menu'} action={handlePause} />
-        <BigPill text={'Restart'} type={'menu'} action={handleReset} />
+        <BigPill text={'Restart'} type={'menu'} action={handleRestart} />
         <BigPill
           text={'Quit Game'}
           type={'menu'}

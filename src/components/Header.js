@@ -5,7 +5,7 @@ import SmallPill from './Buttons/SmallPill'
 
 import Logo from '../assets/images/logo.svg'
 
-import { reset, pauseGame } from '../features/gameSlice'
+import { nextRound, pauseGame } from '../features/gameSlice'
 
 function Header() {
   const dispatch = useDispatch()
@@ -14,8 +14,8 @@ function Header() {
     dispatch(pauseGame())
   }
 
-  const handleReset = () => {
-    dispatch(reset())
+  const handleRestart = () => {
+    dispatch(nextRound())
   }
 
   // Restart buttons should reset current game?
@@ -24,7 +24,7 @@ function Header() {
     <div className='header'>
       <SmallPill text={'menu'} action={handlePause} />
       <Logo />
-      <SmallPill text={'restart'} action={handleReset} />
+      <SmallPill text={'restart'} action={handleRestart} />
     </div>
   )
 }

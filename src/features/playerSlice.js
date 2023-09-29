@@ -13,16 +13,16 @@ export const playerSlice = createSlice({
   name: 'player',
   initialState,
   reducers: {
-    reset: (state) => initialState,
-    incrementPlayerOneScore: (state) => {
-      state.playerOne.score += 1
-    },
-    incrementPlayerTwoScore: (state) => {
-      state.playerTwo.score += 1
+    resetScore: (state) => initialState,
+    incrementPlayerScore: (state, action) => {
+      if (action.payload === 1) {
+        state.playerOne.score += 1
+      } else {
+        state.playerTwo.score += 1
+      }
     },
   },
 })
 
-export const { reset, incrementPlayerOneScore, incrementPlayerTwoScore } =
-  playerSlice.actions
+export const { resetScore, incrementPlayerScore } = playerSlice.actions
 export default playerSlice.reducer

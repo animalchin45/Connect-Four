@@ -22,6 +22,19 @@ export const gameSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => initialState,
+    nextRound: (state) => {
+      ;(state.turn = 1),
+        (state.winner = 0),
+        (state.board = [
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+          [null, null, null, null, null, null],
+        ])
+    },
     nextTurn: (state) => {
       if (state.turn === 1) {
         state.turn = 2
@@ -54,6 +67,7 @@ export const gameSlice = createSlice({
 
 export const {
   reset,
+  nextRound,
   nextTurn,
   startGame,
   rules,
