@@ -1,12 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Countdown from 'react-countdown'
 
 import HeaderBtn from './Buttons/SmallPill'
 
 import TurnRed from '../assets/images/turn-background-red.svg'
 import TurnYellow from '../assets/images/turn-background-yellow.svg'
 
-import { nextRound } from '../features/gameSlice'
+import { nextTurn, nextRound } from '../features/gameSlice'
 import { incrementPlayerScore } from '../features/playerSlice'
 
 function TurnMarker() {
@@ -16,6 +17,10 @@ function TurnMarker() {
   const handleNextRound = () => {
     dispatch(nextRound())
     dispatch(incrementPlayerScore(winner))
+  }
+
+  const renderedCountdown = ({ seconds }) => {
+    return <span>{seconds}s</span>
   }
 
   if (winner === 0) {
@@ -29,7 +34,12 @@ function TurnMarker() {
           <p
             className={`heading-lg turn-marker--player${turn} turn-marker__info__timer`}
           >
-            15s
+            <Countdown
+              key={Date.now() + 15000}
+              date={Date.now() + 15000}
+              renderer={renderedCountdown}
+              onComplete={() => dispatch(nextTurn())}
+            />
           </p>
         </div>
       </div>

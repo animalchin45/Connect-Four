@@ -10,7 +10,7 @@
     border: none;
     border-radius: 4rem 4rem 0 0;
     display: flex;
-    height: calc(100% + 2.5rem);
+    height: calc(100% + 3.5rem);
     justify-content: center;
     width: 100%;
   }
@@ -19,5 +19,9 @@
 @media (max-width: $tablet-break) {
   .footer {
     grid-row: 4 / 5;
+
+    &__fill {
+      height: calc(100% + 2.5rem);
+    }
   }
 }

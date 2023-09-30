@@ -18,8 +18,6 @@ function Header() {
     dispatch(nextRound())
   }
 
-  // Restart buttons should reset current game?
-
   return (
     <div className='header'>
       <SmallPill text={'menu'} action={handlePause} />
