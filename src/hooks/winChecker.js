@@ -9,7 +9,6 @@ export const winChecker = (board) => {
   const horizontal = horizontalWin(board)
   const diagonal = diagonalWin(board)
 
-  diagonalWin(board)
   if (vertical) {
     return vertical
   } else if (horizontal) {
