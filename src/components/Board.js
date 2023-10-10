@@ -7,7 +7,7 @@ import Chip from './Chip'
 import MoveSelector from './Buttons/MoveSelector'
 
 import { chipPosistions } from '../hooks/chipPositions'
-import { verticalWin } from '../hooks/winChecker'
+import { winChecker } from '../hooks/winChecker'
 import { declareWinner } from '../features/gameSlice'
 
 import BoardWhiteLarge from '../assets/images/board-layer-white-large.svg'
@@ -18,7 +18,7 @@ import BoardBlackSmall from '../assets/images/board-layer-black-small.svg'
 function Board() {
   const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
   const dispatch = useDispatch()
-  const { turn, board } = useSelector((state) => state.game)
+  const { turn, winner, board } = useSelector((state) => state.game)
   const [chips, setChips] = useState([])
 
   const renderedChips = chips.map((item) => {
@@ -27,22 +27,24 @@ function Board() {
 
   useEffect(() => {
     setChips(chipPosistions(board))
-    if (verticalWin(board)) {
-      dispatch(declareWinner(verticalWin(board)))
+    if (winChecker(board)) {
+      dispatch(declareWinner(winChecker(board)))
     }
   }, [board])
 
   return (
     <div className='board'>
-      <div className='board__selector-container'>
-        <MoveSelector column={0} player={turn} />
-        <MoveSelector column={1} player={turn} />
-        <MoveSelector column={2} player={turn} />
-        <MoveSelector column={3} player={turn} />
-        <MoveSelector column={4} player={turn} />
-        <MoveSelector column={5} player={turn} />
-        <MoveSelector column={6} player={turn} />
-      </div>
+      {winner === 0 && (
+        <div className='board__selector-container'>
+          <MoveSelector column={0} player={turn} />
+          <MoveSelector column={1} player={turn} />
+          <MoveSelector column={2} player={turn} />
+          <MoveSelector column={3} player={turn} />
+          <MoveSelector column={4} player={turn} />
+          <MoveSelector column={5} player={turn} />
+          <MoveSelector column={6} player={turn} />
+        </div>
+      )}
       <div className='board__white'>
         {!isMobile ? <BoardWhiteLarge /> : <BoardWhiteSmall />}
       </div>

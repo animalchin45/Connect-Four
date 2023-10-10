@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 // to exit dev mode set newGame to true!
 const initialState = {
   turn: 1,
-  newGame: false,
+  newGame: true,
   viewRules: false,
   pause: false,
   winner: 0,
