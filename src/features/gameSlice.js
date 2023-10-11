@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 // to exit dev mode set newGame to true!
 const initialState = {
   turn: 1,
+  time: Date.now() + 15000,
+  prevGameTurn: 1,
   newGame: true,
   viewRules: false,
   pause: false,
@@ -24,7 +26,12 @@ export const gameSlice = createSlice({
   reducers: {
     reset: (state) => initialState,
     nextRound: (state) => {
-      ;(state.turn = 1),
+      ;(state.time = Date.now() + 15000),
+        (state.prevGameTurn =
+          state.prevGameTurn === 1
+            ? (state.prevGameTurn = 2)
+            : (state.prevGameTurn = 1))
+      ;(state.turn = state.prevGameTurn),
         (state.winner = 0),
         (state.board = [
           [null, null, null, null, null, null],
@@ -37,6 +44,7 @@ export const gameSlice = createSlice({
         ])
     },
     nextTurn: (state) => {
+      state.time = Date.now() + 15000
       if (state.turn === 1) {
         state.turn = 2
       } else {
@@ -44,7 +52,9 @@ export const gameSlice = createSlice({
       }
     },
     startGame: (state) => {
-      state.newGame = !state.newGame
+      ;(state.newGame = !state.newGame),
+        (state.turn = 1),
+        (state.time = Date.now() + 15000)
     },
     rules: (state) => {
       state.viewRules = !state.viewRules

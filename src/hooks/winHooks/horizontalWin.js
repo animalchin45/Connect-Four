@@ -8,6 +8,9 @@ export const horizontalWin = (board) => {
   // loop through columns
   for (let y = 0; y <= 5; y++) {
     // loop through rows
+    // reset counter after each row
+    player1 = 0
+    player2 = 0
     for (let x = 0; x <= 6; x++) {
       // switch statement with conditions: player1, player2, default = null
       switch (board[x][y]) {

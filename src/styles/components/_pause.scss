@@ -3,9 +3,9 @@
   background-color: $color-black-lite;
   display: flex;
   justify-content: center;
-  min-height: 100dvh;
-  min-width: 100vw;
-  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  position: fixed;
   z-index: 5;
 
   &__container {

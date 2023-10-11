@@ -8,6 +8,9 @@ export const verticalWin = (board) => {
   // loop through columns
   for (let x = 0; x <= 6; x++) {
     // loop through rows
+    // reset counter after each row
+    player1 = 0
+    player2 = 0
     for (let y = 0; y <= 5; y++) {
       // switch statement with conditions: player1, player2, default = null
       switch (board[x][y]) {

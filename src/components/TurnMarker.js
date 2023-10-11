@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Countdown from 'react-countdown'
 
@@ -11,8 +11,20 @@ import { nextTurn, nextRound } from '../features/gameSlice'
 import { incrementPlayerScore } from '../features/playerSlice'
 
 function TurnMarker() {
+  const clockRef = useRef()
   const dispatch = useDispatch()
-  const { turn, winner } = useSelector((state) => state.game)
+  const { turn, time, pause, winner } = useSelector((state) => state.game)
+
+  const handleStart = () => clockRef.current.start()
+  const handlePause = () => clockRef.current.pause()
+
+  useEffect(() => {
+    if (pause) {
+      handlePause()
+    } else {
+      handleStart()
+    }
+  }, [pause])
 
   const handleNextRound = () => {
     dispatch(nextRound())
@@ -35,9 +47,10 @@ function TurnMarker() {
             className={`heading-lg turn-marker--player${turn} turn-marker__info__timer`}
           >
             <Countdown
-              key={Date.now() + 15000}
-              date={Date.now() + 15000}
+              key={time}
+              date={time}
               renderer={renderedCountdown}
+              ref={clockRef}
               onComplete={() => dispatch(nextTurn())}
             />
           </p>
